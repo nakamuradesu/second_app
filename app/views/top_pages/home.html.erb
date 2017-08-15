@@ -1,48 +1,40 @@
-<% provide(:title, 'Home') %>
 <!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="utf-8">
-  <title>I will look for you</title>
-  <link href="css/reset.css" rel="stylesheet">
-  <link href="style.css" rel="stylesheet">
-</head>
-<body>
-    
-<div id="header">
-<div id="headerArea">
-
- <div id="header_logo">I will look for you</div>
- 
- <div id="gnavi">
-  <ul>
-      <li><a href="#">ログアウト</a></li>
-      <li><a href="#">会員登録</a></li>
-      <li><a href="#">購入依頼</a></li>
-  </ul>
- </div>
-</div>
-</div>
-
-<div id="main_panel">
-<div id="main_panelArea">
-    <h1> you who is busy and has no time. I will find what you want. By agent Suzuki</h1>
-     <p><a class="button" href="#">購入依頼</a></p>
-
-</div>    
-</div>
-
-<div id="footer">
- <div id="footerArea">
-<div id="footer_nav">
-<ul>
-<li><a href="#">注意書き</a></li>
-<li><a href="#">問い合わせ</a></li>
-<li><a href="#">ミッション</a></li>
-<li><a href="#">退会</a></li>
-</ul>
+<html>
+  <head>
+    <title><%= full_title(yield(:title)) %></title>
+    <%= stylesheet_link_tag "application", media: "all",
+                                           "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+       <div class="container">
+        <%= link_to "I will look for you", '#', id: "logo" %>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "会員登録",    '#' %></li>
+            <li><%= link_to "購入依頼",    '#' %></li>
+            <li><%= link_to "ログアウト", '#' %></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="container">
+      <%= yield %>
     </div>
-  </div>
-  </div>
-</body>
+    <div class="center jumbotron">
+  <h1>ou who is busy and has no time. I will find what you want. By agent Suzuki</h1>
+
+  <%= link_to "購入依頼", '#', class: "btn btn-lg btn-primary" %>
+</div>
+
+
+
+    </body>
 </html>
+
+      
