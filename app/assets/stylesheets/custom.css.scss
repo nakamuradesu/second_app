@@ -1,115 +1,110 @@
 @import "bootstrap";
 
-@charset "utf-8";
+/* mixins, variables, etc. */
 
-div#header{
-    position: fixed;
-    width: 100%;
-    height:50%;
-    background:ddffff;
-    border-bottom: solid 1px #EEE;
+$gray-medium-light: #eaeaea;
+
+/* universal */
+
+html {
+  overflow-y: scroll;
 }
 
-div#headerArea{
-     margin: 0 auto;
-     width:980px;
+body {
+  padding-top: 2px;
 }
 
-div#header_logo{
-    float:left;
-    padding:15px 0 0 0;
-    font-weight:bold;
-    color:e6e6e6;
+img {
+	max-width: 100%;
+	height: auto;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
 }
 
-div#gnavi {
-   float: right; 
-   margin: 15px 0 0 0; 
-   text-align: right; 
- }
- 
- div#gnavi ul{
-   clear: both; 
- }
- 
- div#gnavi li {
-   padding: 0 0 0 20px; 
-   float: left; 
- }
- 
- a:link {
-   color: #0088D6 ; 
-   text-decoration: none; 
- }
-
- a:hover {  
-   color: #D60E0B; 
-   text-decoration: underline; 
- }
-
-h1{
-   margin-bottom: 10px;  /* h1の下に10pxの余白を設定 */
-   font-size: 182%; /* フォントサイズを元サイズの182%で表示 */
-   font-weight: bold; /* 太字 */
-   line-height: 2.0em; /* 上下に半行余白の段落の高さを設定 */
-   color:#9E9E7B;
+section {
+  overflow: auto;
 }
 
-div #main_panel{
-    padding: 46px 0 0 0; /* メインパネル上部に46ピクセルの余白を設定 */
-   height: 400px; /* メインパネルの高さを400pxに設定 */
-   background:  no-repeat center center;
-   /* 背景を中央寄せで繰り返しなしで設定 */
-   background-size: cover; /* 背景画像をフルスクリーンで表示 */
-    
+textarea {
+  resize: vertical;
+}
+.center {
+  text-align: center;
+  h1 {
+    margin-bottom: 2px;
+  }
 }
 
-div#main_panelArea {
-    margin: 0 auto; 
-   padding: 90px 0 0 0; 
-   width: 980px; 
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
 }
 
-div#main_panelArea .button {
-   background-color:#69694B; 
-   border-radius: 4px; 
-   color: #fff; 
-   line-height: 52px; 
-   box-shadow: 0 3px 0 #0e8c73; 
-   padding: 16px 30px; 
- }
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
 
- div#main_panelArea .button:hover { 
-   background-color: #31c8aa; 
- }
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: $gray-light;
+}
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
 
-div#footer {
-   width: 100%; /* 横幅を画面一杯に設定 */
-   height: 180px; /* 縦幅設定 */
-   background: #F8F8F8; /* 背景色設定 */
-   font-size: 85%; /* フォントサイズを元サイズの85%で表示 */
- }
 
- div#footerArea {
-   padding: 46px 0 0 0; /* フッターエリアの上に46ピクセルの余白を設定 */
-   margin: 0 auto; /* 横幅をautoにすることでコンテンツが中央寄りに設定 */
-   width: 980px; /* 横幅設定 */
- }
+/* header */
 
- /* フッタナビゲーション */
- div#footer_nav {
-   float: left; /* 左寄せ設定 */
-   margin: 12px 0 0 0; /* ナビゲーションの上に12ピクセルの余白を設定 */
-   text-align: right; /* テキストを右に寄せる */
- }
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #A9A9A9;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 10px;
+  font-weight: bold;
+  line-height: 1;
+  &:hover {
+    color: #B0E0E6;
+    text-decoration: none;
+  }
+}
 
- div#footer_nav ul{
-     clear: both; /* floatを解除する */
- }
+/* footer */
 
- div#footer_nav li {
-   padding: 0 20px 0 0; /* 右に20ピクセルの余白を設定 */
-   float: left; /* リストを左寄せで横並びになるよう設定 */
- }
- 
- 
+footer {
+  margin-top: 3px;
+  padding-top: 10px;
+  border-top: 1px solid $gray-medium-light;
+  color: $gray-light;
+   a {
+    color: $gray;
+    &:hover {
+      color: $gray-darker;
+    }
+  }
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 50px;
+    }
+  }
+}

@@ -1,40 +1,13 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= full_title(yield(:title)) %></title>
-    <%= stylesheet_link_tag "application", media: "all",
-                                           "data-turbolinks-track" => true %>
-    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-    <%= csrf_meta_tags %>
-    <!--[if lt IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <header class="navbar navbar-fixed-top navbar-inverse">
-       <div class="container">
-        <%= link_to "I will look for you", '#', id: "logo" %>
-        <nav>
-          <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "会員登録",    '#' %></li>
-            <li><%= link_to "購入依頼",    '#' %></li>
-            <li><%= link_to "ログアウト", '#' %></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <div class="container">
-      <%= yield %>
-    </div>
-    <div class="center jumbotron">
-  <h1>ou who is busy and has no time. I will find what you want. By agent Suzuki</h1>
-
-  <%= link_to "購入依頼", '#', class: "btn btn-lg btn-primary" %>
+<div class="jumbotron">
+  <h1 class="display-3">Hello, Requester!</h1>
+  <p class="lead">You who is busy and has no time. I will find what you want. By agent Suzuki</p>
+  <hr class="my-4">
+  <p><購入依頼の前には会員登録が必要になります></p>
+  <p class="lead">
+    <button type="button" class="btn btn-primary btn-lg">検索依頼</button>
+    <%=image_tag("top_main.jpg", alt: "aaaa") %>
+  </p>
 </div>
 
-
-
-    </body>
-</html>
 
       
