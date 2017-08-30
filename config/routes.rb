@@ -1,5 +1,10 @@
 SecondApp::Application.routes.draw do
   root  'top_pages#home'
+  
+  match '/member',    to: 'top_pages#member',    via: 'get'
+  match '/purchase',   to: 'top_pages#purchase',   via: 'get'
+  match '/use', to: 'top_pages#use', via: 'get'
+  match '/out',   to: 'top_pages#out',   via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
