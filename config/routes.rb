@@ -1,6 +1,9 @@
 SecondApp::Application.routes.draw do
+  devise_for :users, :controllers => {
+   :registrations => "registrations"
+  }
+  resources :users, only: [:show]
   root  'top_pages#home'
-  
   match '/member',    to: 'top_pages#member',    via: 'get'
   match '/purchase',   to: 'top_pages#purchase',   via: 'get'
   match '/use', to: 'top_pages#use', via: 'get'
