@@ -14,12 +14,12 @@
 ActiveRecord::Schema.define(version: 20170829141510) do
 
   create_table "users", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -27,6 +27,11 @@ ActiveRecord::Schema.define(version: 20170829141510) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
+    t.boolean  "admin",                  default: false
+    t.string   "address"
+    t.date     "birthday"
+    t.string   "bank_account"
+    t.string   "credit"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

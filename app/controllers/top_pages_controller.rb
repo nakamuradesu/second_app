@@ -13,6 +13,16 @@ end
 
 def out
 end
+
+def disclaimer_
+end
+
+def inquiry
+end
+
+def withdrawal
+end
+
 end
 
 
