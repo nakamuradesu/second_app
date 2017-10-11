@@ -1,7 +1,5 @@
 SecondApp::Application.routes.draw do
-  devise_for :users, :controllers => {
-   :registrations => "registrations"
-  }
+  devise_for :users
   resources :users, only: [:show,:index,:destroy]
   root  'top_pages#home'
   match '/member',    to: 'top_pages#member',    via: 'get'
@@ -11,6 +9,9 @@ SecondApp::Application.routes.draw do
   match '/disclaimer',   to: 'top_pages#disclaimer',   via: 'get'
   match '/inquiry',   to: 'top_pages#inquiry',   via: 'get'
   match '/withdrawal',   to: 'top_pages#withdrawal',   via: 'get'
+  match '/searchrequests',   to: 'searchrequests#index',   via: 'get'
+  match '/searchrequests/new',   to: 'searchrequests#new',   via: 'get'
+  match '/searchrequests/create',   to: 'searchrequests#create',   via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
